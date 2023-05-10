@@ -7,33 +7,37 @@ document.getElementById("numero")
     });
 
 //interactuando con el HTML
+// Lista de numeros
 
+const numeros = [];
+let numero = document.getElementById("numero"); 
+let btnAgregar = document.getElementById("btnAgregar"); 
+let listar = document.getElementById("listado"); 
 function agregar(){
-    const inputNumero = document.getElementById("numero");
+   /* const inputNumero = document.getElementById("numero");
     const numero = inputNumero.value;
     lista.push(numero);
     document.getElementById("numero").value = "";
-    lista.sort(); // Ordenamos
+    lista.forEach((elemento) => {
+        document.getElementById('listado').innerHTML += `<p> Numero: ${elemento.value}</p>`;
+        })*/
+        numeros.push(numero)
+        btnAgregar.addEventListener("click", () => {
+          numeros.forEach((elemento) => {
+            listar.innerHTML += `<p>${elemento.value }</p>`
+          })
+        })
 
 }
-
+agregar();
 function mostrarLista(){
 
-    for (i = 0; i < lista.length; i++) {
-        contenido = `${lista[i]}`;
-        document.getElementById('listado').innerHTML += `<p> Numero: ${contenido}</p>`;
-        console.log(lista[i]);
-    }
+
 }
-// Lista de numeros
-
-const lista = [];
-
 
 
 // Ordenamso la lista con el metodo sort
 
-lista.sort(function(a, b){return a - b})
 
 // Media
 
