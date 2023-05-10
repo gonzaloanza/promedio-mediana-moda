@@ -2,7 +2,7 @@
 document.getElementById("numero")
     .addEventListener("keyup", function(e) {
         if (e.keyCode === 13) {
-            document.getElementById("env").click();
+            document.getElementById("btnAgregar").click();
         }
     });
 
@@ -13,25 +13,19 @@ const numeros = [];
 let numero = document.getElementById("numero"); 
 let btnAgregar = document.getElementById("btnAgregar"); 
 let listar = document.getElementById("listado"); 
+
 function agregar(){
-   /* const inputNumero = document.getElementById("numero");
-    const numero = inputNumero.value;
-    lista.push(numero);
-    document.getElementById("numero").value = "";
-    lista.forEach((elemento) => {
-        document.getElementById('listado').innerHTML += `<p> Numero: ${elemento.value}</p>`;
-        })*/
         numeros.push(numero)
         btnAgregar.addEventListener("click", () => {
           numeros.forEach((elemento) => {
             listar.innerHTML += `<p>${elemento.value }</p>`
           })
+          document.getElementById("numero").value = "";
         })
 
 }
 agregar();
 function mostrarLista(){
-
 
 }
 
