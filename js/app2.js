@@ -1,30 +1,39 @@
+// Para darle enter
+document.getElementById("numero")
+    .addEventListener("keyup", function(e) {
+        if (e.keyCode === 13) {
+            document.getElementById("env").click();
+        }
+    });
+
+//interactuando con el HTML
+
+function agregar(){
+    const inputNumero = document.getElementById("numero");
+    const numero = inputNumero.value;
+    lista.push(numero);
+    document.getElementById("numero").value = "";
+    lista.sort(); // Ordenamos
+
+}
+
+function mostrarLista(){
+
+    for (i = 0; i < lista.length; i++) {
+        contenido = `${lista[i]}`;
+        document.getElementById('listado').innerHTML += `<p> Numero: ${contenido}</p>`;
+        console.log(lista[i]);
+    }
+}
 // Lista de numeros
 
-const lista = [
-    1,
-    1,
-    1,
-    2,
-    2,
-    3,
-    4
-  ];
+const lista = [];
 
-  const lista2 = [
-    10,
-    10,
-    10,
-    20,
-    20,
-    30,
-    40
-  ];
 
 
 // Ordenamso la lista con el metodo sort
 
 lista.sort(function(a, b){return a - b})
-console.log(lista);
 
 // Media
 
@@ -83,4 +92,4 @@ const moda = listaArray[listaArray.length - 1];
 return moda[0];
 }
 
-console.log(calcularModa(lista));
+
